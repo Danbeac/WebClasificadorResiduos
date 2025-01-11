@@ -1,0 +1,63 @@
+@import '../../../styles';
+
+.sidenav {
+    overflow: hidden;
+
+    &__menu-content {
+      margin-top: 3px;
+      overflow: hidden;
+      // background-color: $primary-dark;
+    }
+
+    &__menu {
+      height: 60px;
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 5px 15px;
+      border-radius: 4px;
+      background-color: $primary;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $secondary-dark;
+        color: $on-primary;
+      }
+    }
+
+    &__icon {
+      height: 35px;
+      margin-right: 10%;
+    }
+
+    &__text-container {
+      // width: 146px;
+      margin-left: 10px;
+      word-wrap: break-word;
+    }
+
+    &__text {
+      font-size: 14px;
+      color: $on-primary;
+    }
+
+    &__arrow {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      right: 12px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    .active {
+      background-color: $primary;
+    }
+  }
+
+  .sidenav-submenu {
+    .sidenav {
+      padding-left: 15px;
+    }
+  }

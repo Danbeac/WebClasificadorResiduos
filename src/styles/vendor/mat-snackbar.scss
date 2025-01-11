@@ -1,0 +1,31 @@
+.mat-snackbar {
+  &_error {
+      background: $error;
+      color: $on-error;
+      text-align: center;
+  }
+
+  &_success {
+      background: $success;
+      color: $on-success;
+      text-align: center;
+  }
+
+  &_warning {
+      background: $warning;
+      color: $on-warning;
+      text-align: center;
+}
+
+  &_validations {
+    background: $error;
+    color: $on-error;
+    text-align: center;
+    font-size: 15px;
+    line-height: 0.8;
+  }
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background: none !important;
+}

@@ -1,0 +1,48 @@
+@import "../../../styles/colors";
+
+html {
+    min-height: 100%;
+    position: absolute;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: $on-primary;
+    background-color: #5a8945;
+    padding: 30px;
+    z-index: 1;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5%;
+}
+
+.contactenos {
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        line-height: 18px !important;
+        font-size: 13.5px !important;
+    }
+
+    span {
+        font-size: 14px !important;
+    }
+}
+
+
+@media (max-width: 620px) {
+  .footer {
+    padding: 9%;
+}
+}

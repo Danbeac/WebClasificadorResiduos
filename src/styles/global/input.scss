@@ -1,0 +1,266 @@
+.tablaContDoble {
+    //poner en dos lineas
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.oneLine {
+    //poner en una sola linea vertical
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tablaCont {
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+    color: black;
+
+
+
+    .contTxt {
+        text-align: left;
+        margin: 1%;
+        margin-top: 0.2%;
+        margin-bottom: 0.2%;
+
+        .tltData {
+            font-size: 14px;
+            margin-bottom: -1.5%;
+
+            mat-select {
+                margin-top: 2%;
+            }
+
+            .colorSelect {
+                background-color: white;
+            }
+        }
+
+        .contData {
+            border: 2px solid #004c66;
+            border-radius: 0.3rem;
+            height: 40px;
+            width: 100%;
+            margin-top: 1.5%;
+            font-size: 12px;
+        }
+
+        .contDataSelect {
+            border: 2px solid #004c66;
+            border-radius: 0.3rem;
+            height: 40px;
+            width: 100%;
+            margin-top: 1.5%;
+            background-color: white;
+            font-size: 12px;
+            //centrar elemento
+            display: flex;
+            align-items: center;
+
+        }
+
+
+        .contDataArea {
+            border: 2px solid #004c66;
+            border-radius: 0.3rem;
+            margin-top: 1.5%;
+            width: 100%;
+            height: 100px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+
+        }
+
+
+        .contDataDisabled {
+            border-color: gray;
+            background-color: white;
+            color: gray;
+        }
+
+        .contDataError {
+            border: 2px solid red;
+            background-color: white;
+            color: gray;
+        }
+
+        ::ng-deep .mat-form-field-flex>.mat-form-field-infix {
+            padding: 0.2em 0px !important;
+            height: 35px;
+            border: 2px solid #004c66;
+            border-radius: 0.3rem;
+        }
+    }
+
+    .dis {
+        display: inline;
+    }
+
+}
+
+.tam1 {
+    width: 98%;
+}
+
+.tam2 {
+    width: 48%;
+}
+
+.tam3 {
+    width: 32%;
+}
+
+.tam4 {
+    width: 23%;
+}
+
+.tam5 {
+    width: 36%;
+}
+
+.tam6 {
+    width: 68%;
+}
+
+.tam7 {
+    width: 25%;
+}
+
+.tam8 {
+    width: 15%;
+}
+
+.tam9 {
+    width: 18%;
+}
+.contTxt {
+    text-align: left;
+    margin: 1%;
+    margin-top: 0.2%;
+    margin-bottom: 0.2%;
+
+    .tltData {
+        font-size: 14px;
+        margin-bottom: -1.5%;
+
+        mat-select {
+            margin-top: 2%;
+        }
+
+        .colorSelect {
+            background-color: white;
+        }
+    }
+
+    .contData {
+        border: 2px solid #004c66;
+        border-radius: 0.3rem;
+        height: 40px;
+        width: 100%;
+        margin-top: 1.5%;
+        font-size: 12px;
+    }
+
+    .contDataSelect {
+        border: 2px solid #004c66;
+        border-radius: 0.3rem;
+        height: 40px;
+        width: 100%;
+        margin-top: 1.5%;
+        background-color: white;
+        font-size: 12px;
+        //centrar elemento
+        display: flex;
+        align-items: center;
+
+    }
+
+
+    .contDataArea {
+        border: 2px solid #004c66;
+        border-radius: 0.3rem;
+        margin-top: 1.5%;
+        width: 100%;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+
+    }
+
+
+    .contDataDisabled {
+        border-color: gray;
+        background-color: white;
+        color: gray;
+    }
+
+    .contDataError {
+        border: 2px solid red;
+        background-color: white;
+        color: gray;
+    }
+
+    ::ng-deep .mat-form-field-flex>.mat-form-field-infix {
+        padding: 0.2em 0px !important;
+        height: 35px;
+        border: 2px solid #004c66;
+        border-radius: 0.3rem;
+    }
+}
+
+
+
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    font-size: 14px;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    appearance: none;
+}
+
+input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+
+.mat-divider {
+    width: 90%;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+mat-error {
+    font-size: 12px;
+
+    strong {
+        font-size: 12px;
+    }
+}
+
+.contToogle {
+    //por elementos en la misma linea
+    display: flex;
+    align-items: center;
+
+    mat-slide-toggle {
+        margin-top: 6%;
+    }
+}
+
+.disabled-field {
+    border: 2px solid #808080 !important;
+  }

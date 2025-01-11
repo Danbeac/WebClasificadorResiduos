@@ -1,0 +1,71 @@
+@import '../../../styles/colors';
+
+mat-toolbar {
+    background-color: #344566;
+    height: 80px;
+    //centrar elementos en el header
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //quitar padding
+    padding: 0;
+    height: 100px;
+
+}
+
+.logo {
+    width: 40%;
+    margin: 5%;
+}
+
+.is-public-page {
+    cursor: pointer;
+}
+
+.subLogo {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+    gap: 15px;
+
+    mat-card-title {
+        color: $on-base;
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        color: $on-primary;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    img {
+        width: 90px;
+    }
+}
+.user{
+    mat-icon{
+        color: $on-primary;
+    }
+}
+.dataUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .name {
+        font-size: 18px;
+        color: #666666;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .mail {
+        font-size: 14px;
+        color: #666666;
+    }
+}

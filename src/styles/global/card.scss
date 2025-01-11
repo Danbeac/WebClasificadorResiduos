@@ -1,0 +1,91 @@
+//dialog
+.header{
+  // background: #E4F5D3;
+  height: 40px ;
+  padding: 0;
+  background: $primary;
+  margin-bottom: 44px;
+  border-radius: 7px;
+  padding: 2px;
+  text-align: center;
+  margin-bottom: 20px;
+
+  .title {
+      color: $base;
+  }
+}
+
+//posi
+.center-h {
+  justify-content: center;
+}
+
+.center-v {
+  // vertical-align: middle;
+  align-items: center;
+}
+.container {
+  margin-top: -1%;
+  margin-left: 3%;
+  position: block;
+  margin-right: 3%;
+  text-align: center;
+  max-width: 90%;
+}
+.actionsBtn {
+  display: flex;
+  align-items: start;
+}
+.icon {
+  margin-left: 2%;
+  color: $primary;
+  width: 30px;
+}
+
+.img {
+  width: 25px;
+}
+//card
+.card {
+    margin: 1%;
+    padding: 0;
+    background-color: $base;
+    border: none;
+    max-width: 100%;
+  
+    .card-title {
+      margin-top: 3%;
+      display: flex;
+      color: #666666;
+      text-transform: uppercase;
+      font-size: 25px;
+      font-weight: bold;
+  
+    }
+  
+    .card-content {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+  
+      .btnOptions {
+        margin-right: 2%;
+        margin-top: 1%;
+        flex-direction: row-reverse;
+        display: flex;
+  
+      }
+  
+    }
+  
+  }
+
+  
+  th {
+    // background: $primary;
+    color: $base;
+  }
+
+  .tam{
+    font-size: 40px;
+  }

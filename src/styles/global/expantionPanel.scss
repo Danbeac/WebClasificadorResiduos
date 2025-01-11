@@ -1,0 +1,47 @@
+
+
+
+.panel-container {
+    margin-bottom: 16px;
+  }
+  
+  .panel {
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+    border-radius: 7px;
+  }
+  
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+  }
+  
+  .panel-header:hover {
+    background-color: #e5e5e5;
+  }
+  
+  .panel-title {
+    font-weight: bold;
+  }
+  
+  .panel-toggle {
+    margin-left: auto;
+  }
+  
+  .toggle-icon {
+    font-weight: bold;
+  }
+  
+  .panel-content {
+    padding: 8px;
+    display: none;
+  }
+  
+  .panel.expanded .panel-content {
+    display: block;
+  }
+  

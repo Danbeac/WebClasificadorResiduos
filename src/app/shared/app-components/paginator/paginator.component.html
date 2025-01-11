@@ -1,0 +1,48 @@
+<div class="paginator">
+
+    <div class="paginator_page_size">
+        <div class="label_page_size">
+            <span>Items por página:</span>
+        </div>
+
+        <div class="input_page_size">
+            <input [(ngModel)]="pageSize" #inputPageSize
+                   class="app-input" 
+                   type="number"
+                   (ngModelChange)="pageSizeChange()">
+            <span *ngIf="inputPageSize.value > maxPageSize">Máximo {{ maxPageSize }}</span>
+        </div>
+    </div>
+
+    <div class="paginator_range_actions">
+        <div class="paginator_label">
+            <span>{{ numberFirstItem }} – {{ numberLastItem }} de {{ metadataPaginator.totalCount }}</span>
+        </div>
+
+        <div class="paginator_actions">
+            <button class="btn-navigation app-button-action" 
+                    [disabled]="metadataPaginator.currentPage == 1"
+                    (click)="changeNumberPage(1)">
+                <mat-icon aria-label="First Page">first_page</mat-icon>
+            </button>
+
+            <button class="btn-navigation app-button-action"
+                [disabled]="!metadataPaginator.hasPreviousPage"
+                (click)="changeNumberPage(this.metadataPaginator.currentPage - 1)">
+                    <mat-icon aria-label="Previos Icon">arrow_back</mat-icon>
+            </button>
+    
+            <button class="btn-navigation app-button-action"
+                [disabled]="!metadataPaginator.hasNextPage"
+                (click)="changeNumberPage(this.metadataPaginator.currentPage + 1)">
+                <mat-icon aria-label="Next Icon">arrow_forward</mat-icon>
+            </button>
+
+            <button class="btn-navigation app-button-action"
+                [disabled]="numberLastItem == metadataPaginator.totalCount"
+                (click)="changeNumberPage(this.metadataPaginator.totalPages)">
+                <mat-icon aria-label="Last Page">last_page</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

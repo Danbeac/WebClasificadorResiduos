@@ -1,0 +1,55 @@
+//miga de pan
+.breadcrumb {
+  padding-left: 0;
+}
+
+.ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 14px;
+  color: #666666;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: #666666;
+  font-weight: bold;
+  content: ">";
+}
+
+.ul.breadcrumb li a {
+  color: #666666;
+  text-decoration: none;
+}
+
+.ul.breadcrumb li a:hover {
+  color: #35867c;
+  text-decoration: underline;
+ 
+}
+
+.href {
+  //quitar liena de abajo
+  text-decoration: none;
+  color: #666666;
+
+  span {
+    font-size: 13px !important;
+
+  }
+}
+.href:hover {
+  text-decoration: underline;
+  color: #35867c;
+  span{
+    color: #35867c;
+    font-weight: bold !important;
+  }
+}
+.selected {
+  font-weight: bold;
+}

@@ -1,0 +1,52 @@
+::ng-deep .mat-sort-header-container {
+    display:flex;
+    justify-content:center;
+    font-weight: bold;
+}
+
+.mat-table {
+    font-family: $base-font-family !important;
+    text-align: center;    
+    table-layout: fixed !important;
+
+    thead {
+        height: 50px !important;
+        background-color: $primary-light !important;
+        font-weight: bold !important;
+        
+        th{
+            color: $on-primary;
+            font-size: 14px;
+         }
+    }
+
+    .mat-mdc-row {
+        font-family: $base-font-family !important;
+    }
+
+    .mat-mdc-table tbody, .mat-mdc-table tfoot, .mat-mdc-table thead, .mat-mdc-cell, .mat-mdc-footer-cell, .mat-mdc-header-row, .mat-mdc-row, .mat-mdc-footer-row, .mat-mdc-table .mat-mdc-header-cell {
+        text-align: center !important;
+    }
+
+    .mat-cell {
+        font-size: 14px;
+
+        .app-a {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (min-width: 1200px) { 
+     .mat-table {
+        .mat-cell {
+            font-size: 1vw;
+        }
+    
+        thead {
+            th {
+                font-size: 1vw;
+             }
+        }
+    }
+ }

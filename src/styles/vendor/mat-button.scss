@@ -1,0 +1,121 @@
+.mat-button {
+    &_accept {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        padding: 1rem 1rem;
+        border-color: #5a8945;
+        border: 2px solid #5a8945 !important;
+        color: #5a8945 !important;
+        border-radius: 0.5rem !important;
+        font-weight: bold;
+        font-size: 70%;
+        align-items: center;
+        line-height: 0;
+        height: 45px;
+        margin-top: -5%;
+        //centrar el texto
+        display: flex;
+        justify-content: center;
+        width: 130px;
+
+        span {
+            color: #5a8945;
+        }
+
+    }
+
+    &_accept:hover {
+        cursor: pointer;
+        transition-duration: 0.3s;
+        //poner el texto en blanco
+        color: $base;
+        background-color: #5a8945;
+
+        span {
+            color: $base;
+        }
+    }
+
+    &_close {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        padding: 1rem 1rem;
+        border-color: #666666;
+        border: 2px solid #a7a7a7 !important;
+        color: #666666;
+        border-radius: 0.5rem !important;
+        font-weight: bold;
+        font-size: 80%;
+        align-items: center;
+        line-height: 0;
+        height: 45px;
+        margin-top: -5%;
+        //centrar el texto
+        display: flex;
+        justify-content: center;
+        width: 130px;
+        margin-right: 2%;
+
+    }
+
+
+
+    &_close:hover {
+        cursor: pointer;
+        transition-duration: 0.3s;
+        color: white;
+        background-color: #666666;
+
+        span {
+            color: $base;
+        }
+    }
+
+    &_raised {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        border-color: #666666;
+        border: 2px solid #a7a7a7 !important;
+        color: #666666;
+        border-radius: 0.5rem !important;
+        font-weight: bold;
+        font-size: 100%;
+        align-items: center;
+        line-height: 0;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+    }
+    &_raised:hover {
+        cursor: pointer;
+        transition-duration: 0.3s;
+        color: white;
+        background-color: #666666;
+
+        span {
+            color: $base;
+        }
+    }
+}
+
+.mdc-button  {
+  background-color: #1fbda2;
+  color: #ffffff;
+}
+
+#cameraContainer .capture-button {
+  margin-top: 10px !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  color: #fff !important;
+  background-color: #36522a !important;
+  border: none !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s !important;
+}
+
+#cameraContainer .capture-button:hover {
+  background-color: #5a8945 !important;
+}

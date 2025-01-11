@@ -1,0 +1,24 @@
+<div class="sidenav" *ngIf="show && menu && menu.length > 0" [@fadeIn]="animate && animation && animation.in" [@close]="animate && animation && animation.out">
+  <div class="sidenav__menu-content" *ngFor="let item of menu; let menuIndex = index">
+    <div class="sidenav__menu" (click)="onNavClick(item, menuIndex)" [ngClass]="{'active': item.id === activeOne.id}" [routerLink]="[item.routerLink]">
+      <!-- <img class="sidenav__icon" [src]="item.icon" alt="icon" *ngIf="item.icon"> -->
+      <mat-icon class="icon" style="color: white;">{{item.icon}}</mat-icon>
+      <div class="sidenav__text-container">
+        <span class="sidenav__text">{{ item.label }}</span>
+      </div>
+      <span class="sidenav__arrow" *ngIf="withArrow && item.menu" [@rotate]="item.id === activeOne.id && activeOne.menu ? 'rotated' : 'default'">
+        <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path></svg>
+      </span>
+    </div>
+    <app-side-nav
+      class="sidenav-submenu"
+      [animate]="true"
+      [activeID]="activeID"
+      [animation]="animation"
+      [menu]="activeOne.menu"
+      (onSidenav)="onSidenav.emit($event)"
+      [withArrow]="withArrow"
+      [show]="item.menu && item.id === activeOne.id">
+    </app-side-nav>
+  </div>
+</div>

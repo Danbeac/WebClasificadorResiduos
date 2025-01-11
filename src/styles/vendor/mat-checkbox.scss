@@ -1,0 +1,33 @@
+/* Estilos personalizados para el mat-checkbox */
+.mat-checkbox {
+    /* Cambiar el color del fondo del checkbox cuando está seleccionado */
+    &.mat-checkbox-checked .mat-checkbox-background {
+      background-color: $primary; /* Color personalizado cuando está seleccionado */
+      border-color: $primary; /* Borde del checkbox cuando está seleccionado */
+    }
+  
+    /* Cambiar el color del borde del checkbox cuando no está seleccionado */
+    .mat-checkbox-background {
+      border-color: #000000; /* Color personalizado cuando no está seleccionado */
+    }
+  
+    /* Cambiar el color del icono del checkbox cuando está seleccionado */
+    .mat-checkbox-checked .mat-checkbox-inner-container {
+      background-color: #3f51b5; /* Color personalizado del icono cuando está seleccionado */
+      border-color: #3f51b5; /* Borde del icono del checkbox cuando está seleccionado */
+    }
+  
+    /* Cambiar el color del borde del checkbox cuando está en estado hover */
+    .mat-checkbox:hover .mat-checkbox-background {
+      border-color: #000000; /* Color personalizado del borde cuando está en estado hover */
+    }
+  
+    /* Cambiar el color del borde del checkbox cuando está en estado focus */
+    .mat-checkbox-focused .mat-checkbox-background {
+      border-color: #000000; /* Color personalizado del borde cuando está en estado focus */
+    }
+  }
+  
+  .mdc-label {
+    width: 130px !important;
+  }

@@ -1,0 +1,22 @@
+.mat-option.mat-selected:not(.mat-option-disabled) {
+    color: black!important;
+  }
+
+  .mat-select-value-text {
+    color: #333; /* Cambiar el color a tu gusto */
+  }
+
+  .mat-select-arrow {
+    color: #87996B; /* Cambiar el color a tu gusto */
+  }
+
+
+  /* Cambiar el color de fondo del `mat-option` seleccionado */
+.mat-option.mat-selected:not(.mat-option-multiple) {
+  background-color: #eeeeee;
+}
+
+.mat-form-field-ripple {
+  background-color: #87996B;
+}
+

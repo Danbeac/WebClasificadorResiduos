@@ -1,0 +1,315 @@
+@import '../../../styles';
+
+.container {
+  scrollbar-color: rgba(214, 17, 17, 0.5) rgba(224, 36, 36, 0);
+  scrollbar-width: thin;
+}
+
+mat-sidenav {
+  background: $base-light;
+  width: 350px;
+  height: 100%;
+}
+
+mat-sidenav-content {
+  height: 96vh;
+
+  .main {
+    margin-left: 30px;
+    margin-top: 1%;
+  }
+}
+
+mat-toolbar {
+  mat-icon {
+    margin-left: 15px;
+    // color: #000000;
+
+  }
+
+  justify-content: space-between;
+
+  .box {
+    margin-top: 15px;
+  }
+
+  box-sizing: border-box;
+  padding: 0;
+}
+
+* {
+  color: #000000;
+  box-sizing: border-box;
+  text-decoration: none;
+
+}
+
+mat-icon {
+  color: #8997ac;
+  font-family: 'Material Icons';
+  vertical-align: middle;
+}
+
+.logo{
+  margin: 0 auto;
+  padding: 15px;
+  cursor: pointer;
+  
+  img {
+    width: 250px;
+  }
+}
+
+.top {
+  display: flex;
+  float: right;
+  margin-top: 2px;
+  margin-right: 4%;
+  cursor: pointer;
+  font-size: 25px;
+
+
+  mat-icon {
+    color: #666666;
+
+  }
+}
+
+.user {
+  display: flex;
+  text-align: center;
+  font-weight: 800;
+  margin-left: 10%;
+  margin-top: 6%;
+
+
+  img {
+    margin-top: 16px;
+    width: 120px;
+    height: 120px;
+    color: #000000;
+  }
+
+  mat-icon {
+    color: #666666;
+
+  }
+
+  .name {
+    margin-left: 2%;
+    color: #666666 !important;
+    font-weight: bold;
+  }
+
+  .mail {
+    margin-top: -10px;
+    color: white;
+  }
+}
+
+.rol {
+  display: flex;
+  text-align: center;
+  font-weight: 800;
+  margin-left: 10%;
+
+  .rolName {
+    font-size: 12px;
+  }
+}
+
+.menu-head {
+  color: #185564;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  margin: 0 10px 0 10px;
+
+  span {
+    font-size: 15px;
+  }
+
+  .menu-panel {
+    margin: 5px 0px 0;
+    border-radius: 3px;
+    color: #3c4858;
+    text-transform: capitalize;
+    font-size: 13px;
+    padding: 10px 15px;
+
+  }
+
+  .menu-button {
+   
+   
+    span{
+      padding-left: 5%;
+    }
+    .icon {
+      color: #666666;
+      margin: 0;
+    }
+  }
+
+  .menu-icon {
+    padding-left: 20px;
+    margin-bottom: 10px;
+
+    .icon {
+      color: #666666;
+    }
+  }
+
+
+  .menu-button span {
+    margin-left: -10px;
+
+
+  }
+
+  .menu-icon:hover {
+    color: white;
+    background: #87996B;
+    height: 50px;
+    width: 70px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .icon {
+      color: white;
+    }
+
+  }
+
+  .selected {
+    color: white;
+    background: #87996B;
+    border-radius: 5px;
+    border: 1px solid #666666; 
+    height: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+    .menu-button {
+      color: white;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      width: 100%;
+
+      span{
+        color: white;
+      }
+    }
+  }
+  .selected:hover {
+    background: #87996B;
+    .menu-button{
+      background: #87996B;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  .menu-button:hover {
+    background: white ;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+    span {
+      font-size: 16px;
+    font-style: bold;
+
+
+    }
+
+    .icon {
+      margin: 0%;
+
+    }
+  }
+
+  .menu-button:focus {
+    background: #87996B;
+  }
+
+  .menu-button:focus span {
+    color: gray;
+  }
+
+  img {
+    width: 20%;
+    margin-right: 5%;
+  }
+
+  // .menu-panel:hover {
+  //     background: #E4F5D3;
+  //     color: red;
+
+  // }
+
+  // .menu-panel:hover .title {
+  //     color: red;
+  // }
+
+  // .menu-panel:focus {
+  //     background: #87996B;
+  // }
+
+
+  mat-accordion {
+    mat-expansion-panel {
+      color: rgb(0, 0, 0);
+      background-color: #ffff;
+
+      mat-expansion-panel-header {
+        height: 80px;
+
+
+        mat-panel-title {
+          margin-left: -2%;
+
+          .title {
+            margin-left: 3%;
+            font-size: 14px;
+            color: #666666;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+.sidenav {
+  padding: 15px;
+}
+
+.sidenav__menu-content {
+  border-radius: 5px;
+}
+
+.sidenav__menu {
+  width: 310px;
+}
+
+.logo-ica {
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  left: 70px;
+  margin: 0 auto;
+  width: 200px;
+}

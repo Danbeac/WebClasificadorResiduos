@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <app-box-college-images *ngIf="showImages" style="position: absolute; left: 25px;"></app-box-college-images>
+  <form class="upload-form">
+    <h2 style="text-align: center;">Imágenes para analizar</h2>
+    <img class="image" [style.background-image]="'url(data:image;base64,' + stringImageBase64 + ')'"
+                  [style.border-radius]="'2px'"
+                  [style.height]="'400px'">
+    <label
+      for="file"
+      (dragover)="handleDragOver($event)"
+      (drop)="handleDrop($event)"
+    >
+      <i class="ph ph-upload"></i>
+
+      <span><span>Seleccionar</span> imagen
+      </span>
+    </label>
+
+    <input
+      id="file"
+      type="file"
+      name="file"
+      accept="image/png, image/gif, image/jpeg"
+      (change)="onFileSelected($event, null)"
+    />
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" button mat-button class="mat-button_accept" (click)="useCamera()">Usar Camara</button>
+    </div>
+  </form>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button button mat-button class="mat-button_accept" *ngIf="enableToProcess">Procesar Imagen</button>
+  </div>
+
+</div>
+
+
+<!-- Contenedor para la cámara -->
+<div id="cameraContainer" style="display: none;">
+</div>
