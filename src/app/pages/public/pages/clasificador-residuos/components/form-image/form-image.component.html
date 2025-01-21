@@ -1,3 +1,4 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
 <div class="wrapper">
   <app-box-college-images *ngIf="showImages" style="position: absolute; left: 25px;"></app-box-college-images>
   <form class="upload-form">
@@ -29,9 +30,10 @@
     </div>
   </form>
   <div style="display: flex; justify-content: center; align-items: center;">
-    <button button mat-button class="mat-button_accept" *ngIf="enableToProcess">Procesar Imagen</button>
+    <button button mat-button class="mat-button_accept" *ngIf="enableToProcess" (click)="sendImageToPredict()">Procesar Imagen</button>
   </div>
 
+  <div class="lbl-prediction" *ngIf="this.textPrediction">{{ this.textPrediction }}</div>
 </div>
 
 

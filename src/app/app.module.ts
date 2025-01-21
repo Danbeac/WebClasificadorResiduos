@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ClasificadorResiduosModule } from './pages/public/pages/clasificador-residuos/clasificador-residuos.module';
 import { NotificationModule } from './services/notification/notification.module';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NotificationModule } from './services/notification/notification.module'
   ],
   providers: [
     provideAnimationsAsync(),
+    provideHttpClient(withFetch()),
     importProvidersFrom(
       NotificationModule.forRoot()
     ),

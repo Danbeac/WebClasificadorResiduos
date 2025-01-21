@@ -1,3 +1,4 @@
+import { ApiModelPredictService } from './../../../../../../services/api-model-predict/api-model-predict.service';
 import { LoaderImageBase64Service } from './../../../../../../services/loader-image-base64/loader-image-base64.service';
 import { Component, HostListener } from '@angular/core';
 import { NotificationService } from '../../../../../../services';
@@ -17,11 +18,12 @@ export class FormImageComponent {
   mbsEnable: number = 5;
   enableToProcess: boolean = false;
   showImages: boolean = true;
+  isLoading: boolean = false;
+  textPrediction: string = '';
 
   constructor(private notificationService: NotificationService,
-              private loaderImageBase64Service: LoaderImageBase64Service
-  ) {
-
+    private loaderImageBase64Service: LoaderImageBase64Service,
+    private apiModelPredictService: ApiModelPredictService) {
   }
 
   @HostListener('window:resize', ['$event'])
@@ -49,6 +51,20 @@ export class FormImageComponent {
     });
   }
 
+  sendImageToPredict(){
+    this.turnOnSpinner();
+    this.apiModelPredictService.PredictWithImage({image: this.stringImageBase64 }).subscribe({
+      next: (response) => {
+        this.enableToProcess = false;
+        this.textPrediction = response.class_name;
+        this.turnOffSpinner();
+      },
+      error: () => {
+        this.turnOffSpinner();
+      },
+    });
+  }
+
   onFileSelected(event: any, inputFile: File | null) {
     this.outputBoxVisible = false;
     var files = event.target.files;
@@ -63,6 +79,7 @@ export class FormImageComponent {
           convertFileToBase64String(file).subscribe({
             next: (stringBase64) => {
               this.stringImageBase64 = stringBase64;
+              this.textPrediction = '';
               this.enableToProcess = true;
             }
           })
@@ -128,6 +145,8 @@ export class FormImageComponent {
           const context = canvas.getContext('2d');
           context.drawImage(video, 0, 0, canvas.width, canvas.height);
           this.stringImageBase64 = canvas.toDataURL('image/jpeg').replace('data:image/jpeg;base64,', '');
+          this.textPrediction = '';
+          this.enableToProcess = true;
           video.pause();
           stream.getTracks().forEach(track => track.stop());
           document.getElementById('cameraContainer').style.display = 'none';
@@ -143,5 +162,13 @@ export class FormImageComponent {
       .catch((error) => {
         console.error('Error accessing camera: ', error);
       });
+  }
+
+  turnOffSpinner(): void {
+    this.isLoading = false;
+  }
+
+  turnOnSpinner(): void {
+    this.isLoading = true;
   }
 }
