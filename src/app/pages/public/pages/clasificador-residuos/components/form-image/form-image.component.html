@@ -5,7 +5,15 @@
     <h2 style="text-align: center;">Imágenes para analizar</h2>
     <img class="image" [style.background-image]="'url(data:image;base64,' + stringImageBase64 + ')'"
                   [style.border-radius]="'2px'"
-                  [style.height]="'400px'">
+                  [style.height]="'400px'"
+                  *ngIf="showImage">
+
+
+     <!-- Contenedor de la cámara -->
+    <div id="cameraContainer" style="display: none; position: relative;">
+      <button type="button" (click)="stopStreaming()" class="capture-button">Cerrar</button>
+    </div>
+
     <label
       for="file"
       (dragover)="handleDragOver($event)"
@@ -30,13 +38,13 @@
     </div>
   </form>
   <div style="display: flex; justify-content: center; align-items: center;">
-    <button button mat-button class="mat-button_accept" *ngIf="enableToProcess" (click)="sendImageToPredict()">Procesar Imagen</button>
+    <button button mat-button class="mat-button_accept" *ngIf="enableToProcess" (click)="sendImageToPredict(true)">Procesar Imagen</button>
   </div>
 
-  <div class="lbl-prediction" *ngIf="this.textPrediction">{{ this.textPrediction }}</div>
+  <div class="lbl-prediction" *ngIf="this.textPrediction">
+    <span>{{ this.textPrediction }}</span>
+  </div>
 </div>
 
 
-<!-- Contenedor para la cámara -->
-<div id="cameraContainer" style="display: none;">
-</div>
+

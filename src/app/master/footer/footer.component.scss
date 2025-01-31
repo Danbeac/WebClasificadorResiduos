@@ -6,7 +6,8 @@ html {
 }
 
 .footer {
-    position: fixed;
+    // position: fixed;
+    position: inherit;
     bottom: 0;
     width: 100%;
     color: $on-primary;

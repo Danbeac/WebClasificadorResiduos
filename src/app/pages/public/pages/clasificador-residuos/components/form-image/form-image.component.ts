@@ -20,6 +20,9 @@ export class FormImageComponent {
   showImages: boolean = true;
   isLoading: boolean = false;
   textPrediction: string = '';
+  captureInterval: any;
+  stopStreaming: () => void;
+  showImage: boolean = true;
 
   constructor(private notificationService: NotificationService,
     private loaderImageBase64Service: LoaderImageBase64Service,
@@ -51,8 +54,10 @@ export class FormImageComponent {
     });
   }
 
-  sendImageToPredict(){
-    this.turnOnSpinner();
+  sendImageToPredict(isButtonClick: boolean = false) {
+    if(isButtonClick)
+      this.turnOnSpinner();
+
     this.apiModelPredictService.PredictWithImage({image: this.stringImageBase64 }).subscribe({
       next: (response) => {
         this.enableToProcess = false;
@@ -128,6 +133,14 @@ export class FormImageComponent {
     }
   }
 
+  ngOnDestroy() {
+    if (this.stopStreaming) {
+      this.stopStreaming();
+    }
+  }
+
+  // Previous Version
+  /*
   useCamera() {
     navigator.mediaDevices.getUserMedia({ video: true })
       .then((stream) => {
@@ -162,6 +175,53 @@ export class FormImageComponent {
       .catch((error) => {
         console.error('Error accessing camera: ', error);
       });
+    }
+    */
+
+  useCamera() {
+    this.showImage = false;
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then((stream) => {
+        const video = document.createElement('video');
+        video.srcObject = stream;
+        video.play();
+
+        const cameraContainer = document.getElementById('cameraContainer');
+        cameraContainer.style.display = 'contents';
+        cameraContainer.appendChild(video);
+
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+
+        const captureAndSendImage = () => {
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          context.drawImage(video, 0, 0, canvas.width, canvas.height);
+          const imageBase64 = canvas.toDataURL('image/jpeg').replace('data:image/jpeg;base64,', '');
+
+          this.sendImageToAPI(imageBase64);
+        };
+
+        // Captura y envía una imagen cada segundo (1000 ms)
+        this.captureInterval = setInterval(captureAndSendImage, 1000);
+
+        // Detener el streaming cuando se cierra el componente o se detiene la cámara
+        this.stopStreaming = () => {
+          this.loadDefaultImage();
+          this.textPrediction = '';
+          this.showImage = true;
+          clearInterval(this.captureInterval);
+          video.pause();
+          stream.getTracks().forEach(track => track.stop());
+          cameraContainer.style.display = 'none';
+          cameraContainer.removeChild(video);
+        };
+      });
+  }
+
+  sendImageToAPI(imageBase64: string) {
+    this.stringImageBase64 = imageBase64;
+    this.sendImageToPredict();
   }
 
   turnOffSpinner(): void {

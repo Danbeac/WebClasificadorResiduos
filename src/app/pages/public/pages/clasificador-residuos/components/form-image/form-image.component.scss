@@ -155,7 +155,7 @@ button {
   padding: 10px 20px !important;
   font-size: 16px !important;
   color: #fff !important;
-  background-color: #007bff !important;
+  background-color: #6f995b !important;
   border: none !important;
   border-radius: 5px !important;
   cursor: pointer !important;
@@ -163,12 +163,21 @@ button {
 }
 
 #cameraContainer .capture-button:hover {
-  background-color: #0056b3 !important;
+  background-color: #5a8945 !important;
 }
 
 .lbl-prediction {
   text-align: center;
-  font-size: 60px;
   margin-top: 30px;
-  margin-bottom: 80px;
+
+  span {
+    font-size: 50px;
+    line-height: 40px;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
